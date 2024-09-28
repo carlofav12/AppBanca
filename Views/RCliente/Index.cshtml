@@ -1,0 +1,45 @@
+@model AppBanca.ViewModel.RClienteViewModel
+
+<div class="container mt-5">
+    <h2 class="text-center">Crear Cuenta Bancaria</h2>
+
+    @if (ViewData["Message"] != null)
+    {
+        <div class="alert alert-success" style="color: darkgreen; text-align: center;">
+            @ViewData["Message"]
+        </div>
+    }
+
+    <form asp-action="Registrar" method="post" class="mt-4 text-center">
+        <div class="form-group mx-auto" style="max-width: 400px;">
+            <label asp-for="FormCliente.Nombre" class="control-label"></label>
+            <input asp-for="FormCliente.Nombre" class="form-control" />
+            <span asp-validation-for="FormCliente.Nombre" class="text-danger"></span>
+        </div></br>
+
+        <div class="form-group mx-auto" style="max-width: 400px;">
+            <label asp-for="FormCliente.TCuenta" class="control-label">Tipo de Cuenta</label>
+            <select asp-for="FormCliente.TCuenta" class="form-control">
+                <option value="" style="text-align: center;">Seleccione un tipo de cuenta</option>
+                <option value="Cuenta Corriente">Cuenta Corriente</option>
+                <option value="Cuenta Ahorro">Cuenta Ahorro</option>
+                <option value="Cuenta a Plazo Fijo">Cuenta a Plazo Fijo</option>
+            </select>
+            <span asp-validation-for="FormCliente.TCuenta" class="text-danger"></span>
+        </div></br>
+
+        <div class="form-group mx-auto" style="max-width: 400px;">
+            <label asp-for="FormCliente.SaldoI" class="control-label">Saldo Inicial</label>
+            <input asp-for="FormCliente.SaldoI" class="form-control" type="number" step="0.01" />
+            <span asp-validation-for="FormCliente.SaldoI" class="text-danger"></span>
+        </div></br>
+
+        <div class="form-group mx-auto" style="max-width: 400px;">
+            <label asp-for="FormCliente.Email" class="control-label"></label>
+            <input asp-for="FormCliente.Email" class="form-control" type="email" />
+            <span asp-validation-for="FormCliente.Email" class="text-danger"></span>
+        </div>
+        </br>
+        <button type="submit" class="btn btn-primary btn-block mx-auto" style="width: 200px;">Crear Cuenta</button>
+    </form>
+</div>
