@@ -1,8 +1,27 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Inicio";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenidos</title>
+</head>
+
+<body class="bg-light">
+
+    <div class="container text-center mt-5">
+        <h1 class="display-4">¡Bienvenidos!</h1>
+        <p class="lead">Para registrar un nuevo cliente, dirígete a
+            <a href="/RCliente" class="btn btn-primary">REGISTRO</a>.
+        </p>
+        <p class="lead">Si deseas ver una lista de clientes, accede a
+            <a href="/LCliente" class="btn btn-secondary">LISTA</a>.
+        </p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
