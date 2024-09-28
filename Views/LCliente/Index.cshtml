@@ -1,0 +1,50 @@
+@model AppBanca.ViewModel.RClienteViewModel
+
+@{
+    ViewData["Title"] = "Lista de Clientes";
+}
+
+<h1 class="text-center mt-4">@ViewData["Title"]</h1>
+
+<div class="container mt-4">
+    @if (!Model.ListCliente.Any())
+    {
+        <div class="alert alert-warning text-center">No hay clientes registrados.</div>
+    }
+    else
+    {
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Tipo de Cuenta</th>
+                        <th>Saldo Inicial</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var cliente in Model.ListCliente)
+                    {
+                        <tr>
+                            <td>@cliente.Nombre</td>
+                            <td>@cliente.TCuenta</td>
+                            <td>@cliente.SaldoI.ToString("C")</td>
+                            <td>@cliente.Email</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>
+
+<style>
+    th {
+        text-align: center;
+    }
+
+    td {
+        vertical-align: middle;
+    }
+</style>
